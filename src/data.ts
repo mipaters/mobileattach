@@ -1,7 +1,7 @@
 import type { AgentActivity, Bundle, Customer, CustomerPreference, Product, ROIModel } from "./types";
 
 export const disclaimer =
-  "Concept demonstration using synthetic customer, product, catalogue, pricing, eligibility, inventory, financial, interaction, and outcome data. Products, prices, recommendations, eligibility results, financial values, and business outcomes are illustrative and do not represent current Rogers offers, customers, systems, or forecasts.";
+  "Concept demonstration using synthetic customer, product, catalogue, pricing, eligibility, inventory, financial, interaction, and outcome data. Products, prices, recommendations, eligibility results, financial values, and business outcomes are illustrative and do not represent current offers, customers, systems, or forecasts.";
 
 const product = (
   id: string,

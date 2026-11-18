@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        rogers: {
+        accent: {
           500: "#da291c",
           600: "#bd2017",
         },

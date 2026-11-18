@@ -229,9 +229,9 @@ function App() {
             <Menu size={22} />
           </button>
           <Link to="/" className="flex min-w-0 items-center gap-3">
-            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-rogers-500"><Sparkles size={21} /></div>
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent-500"><Sparkles size={21} /></div>
             <div className="min-w-0">
-              <div className="truncate text-sm font-extrabold sm:text-base">Rogers Mobile Attach Agent</div>
+              <div className="truncate text-sm font-extrabold sm:text-base">Mobile Attach Agent</div>
               <div className="hidden text-xs text-slate-400 sm:block">The right recommendation. The right bundle. The right moment.</div>
             </div>
           </Link>
@@ -259,7 +259,7 @@ function App() {
                 end={path === "/"}
                 className={({ isActive }) =>
                   `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition ${
-                    isActive ? "bg-rogers-500 text-white" : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                    isActive ? "bg-accent-500 text-white" : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
                   }`
                 }
               >
@@ -359,7 +359,7 @@ function Overview({
             return (
               <button
                 key={step.title}
-                className={`group rounded-2xl border p-4 text-left transition hover:-translate-y-1 ${stepIndex === index ? "border-rogers-500 bg-rogers-500/15" : "border-white/10 bg-white/5 hover:border-white/30"}`}
+                className={`group rounded-2xl border p-4 text-left transition hover:-translate-y-1 ${stepIndex === index ? "border-accent-500 bg-accent-500/15" : "border-white/10 bg-white/5 hover:border-white/30"}`}
                 onClick={() => openStep(stepIndex)}
               >
                 <div className="flex items-center justify-between">
@@ -376,7 +376,7 @@ function Overview({
         <div className="sticky bottom-4 rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-panel">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
             <div className="flex min-w-0 flex-1 items-center gap-3">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-rogers-500"><ActiveIcon /></span>
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-500"><ActiveIcon /></span>
               <div className="min-w-0">
                 <div className="text-xs font-bold uppercase tracking-widest text-red-300">Step {index + 1} of {walkthrough.length}</div>
                 <div className="truncate text-lg font-extrabold">{walkthrough[index].title}</div>
@@ -424,7 +424,7 @@ function Dashboard(props: PageProps) {
       <PageHeader
         eyebrow="Executive Sales Dashboard"
         title="Turn Every Device Interaction into a Better Customer Outcome"
-        description="Agentic AI helps Rogers understand customer needs, recommend suitable products, and build transparent bundles across retail and digital channels."
+        description="Agentic AI helps a mobile provider understand customer needs, recommend suitable products, and build transparent bundles across retail and digital channels."
         actions={<button className="btn-primary" onClick={() => navigate("/customer")}><Play size={16} /> Start Demo Scenario</button>}
       />
       <div className="space-y-6 p-5 lg:p-8">
@@ -436,7 +436,7 @@ function Dashboard(props: PageProps) {
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
           {kpis.map(([value, label], index) => (
             <div className="metric" key={label}>
-              <div className={`text-2xl font-black ${index === 0 ? "text-blue-600" : index < 5 ? "text-rogers-500" : "text-emerald-600"}`}>{props.saleCompleted && index === 0 ? "18,421" : value}</div>
+              <div className={`text-2xl font-black ${index === 0 ? "text-blue-600" : index < 5 ? "text-accent-500" : "text-emerald-600"}`}>{props.saleCompleted && index === 0 ? "18,421" : value}</div>
               <div className="mt-1 text-sm font-semibold">{label}</div>
               <div className="mt-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">Simulated</div>
             </div>
@@ -511,13 +511,13 @@ function CustomerPage({ preferences, setPreferences, recommendation }: PageProps
           </div>
           <p className="mt-5 rounded-xl bg-blue-50 p-4 font-semibold text-blue-950 dark:bg-blue-950/40 dark:text-blue-100">“{customer.statement}”</p>
           <DefinitionList items={[
-            ["Current device", customer.currentDevice], ["Current service", "Rogers wireless"], ["Current plan", customer.currentPlan],
+            ["Current device", customer.currentDevice], ["Current service", "Wireless service"], ["Current plan", customer.currentPlan],
             ["Tenure", customer.tenure], ["Current spend", `${money(customer.monthlySpend)} / month`], ["Upgrade reason", customer.upgradeReason],
             ["Household", `${customer.household.activeLines} lines; ${customer.household.eligibleMembers} eligible member`], ["Consent", customer.consent],
           ]} />
         </section>
         <section className="panel p-5">
-          <div className="flex items-center gap-2"><SlidersHorizontal className="text-rogers-500" /><h2 className="text-xl font-black">Stated needs</h2></div>
+          <div className="flex items-center gap-2"><SlidersHorizontal className="text-accent-500" /><h2 className="text-xl font-black">Stated needs</h2></div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
             <Field label="Monthly target">
               <input className="w-full" type="range" min="80" max="170" value={preferences.budget} onChange={(event) => update("budget", Number(event.target.value))} />
@@ -541,7 +541,7 @@ function CustomerPage({ preferences, setPreferences, recommendation }: PageProps
         </section>
         <section className="space-y-5">
           <div className="panel p-5">
-            <div className="flex items-center gap-2"><ShoppingBasket className="text-rogers-500" /><h2 className="text-xl font-black">Current basket</h2></div>
+            <div className="flex items-center gap-2"><ShoppingBasket className="text-accent-500" /><h2 className="text-xl font-black">Current basket</h2></div>
             <BasketLine product={recommendation.device} />
             <BasketLine product={recommendation.plan} />
             <BasketLine label="Accessories" value="None selected" optional />
@@ -692,8 +692,8 @@ function BundlePage({ preferences, selectedBundle, setSelectedBundle, bundleItem
           {bundles.map((bundle) => {
             const values = bundleTotals(bundle);
             return (
-              <button onClick={() => chooseBundle(bundle)} className={`panel p-5 text-left transition ${selectedBundle.id === bundle.id ? "border-rogers-500 ring-2 ring-red-500/20" : "hover:border-slate-400"}`} key={bundle.id}>
-                <div className="flex items-center justify-between"><h2 className="text-xl font-black">{bundle.name}</h2>{bundle.id === "recommended" && <span className="badge bg-rogers-500 text-white">Best fit</span>}</div>
+              <button onClick={() => chooseBundle(bundle)} className={`panel p-5 text-left transition ${selectedBundle.id === bundle.id ? "border-accent-500 ring-2 ring-red-500/20" : "hover:border-slate-400"}`} key={bundle.id}>
+                <div className="flex items-center justify-between"><h2 className="text-xl font-black">{bundle.name}</h2>{bundle.id === "recommended" && <span className="badge bg-accent-500 text-white">Best fit</span>}</div>
                 <p className="mt-1 text-sm text-slate-500">{bundle.note}</p>
                 <div className="mt-4 flex items-end justify-between"><div><div className="text-2xl font-black">{money(values.monthly)}<span className="text-sm font-normal">/mo</span></div><div className="text-sm text-slate-500">{money(values.upfront)} upfront</div></div><div className="text-right"><strong>{bundle.fitScore}%</strong><div className="text-xs text-slate-500">fit score</div></div></div>
               </button>
@@ -746,7 +746,7 @@ function ComparisonPage({ recommendation }: PageProps) {
       <div className="space-y-6 p-5 lg:p-8">
         <div className="panel overflow-x-auto">
           <table className="w-full min-w-[850px] text-left text-sm">
-            <thead><tr className="bg-slate-950 text-white"><th className="p-4">Device comparison</th>{compared.map((device, index) => <th className="p-4" key={device.id}><span className={index === 0 ? "text-red-300" : ""}>{device.name}</span>{index === 0 && <span className="ml-2 badge bg-rogers-500 text-white">Recommended</span>}</th>)}</tr></thead>
+            <thead><tr className="bg-slate-950 text-white"><th className="p-4">Device comparison</th>{compared.map((device, index) => <th className="p-4" key={device.id}><span className={index === 0 ? "text-red-300" : ""}>{device.name}</span>{index === 0 && <span className="ml-2 badge bg-accent-500 text-white">Recommended</span>}</th>)}</tr></thead>
             <tbody>{fields.map((field, fieldIndex) => <tr className="border-t border-slate-200 dark:border-slate-700" key={field}><th className="bg-slate-50 p-4 dark:bg-slate-800">{field}</th>{compared.map((device, deviceIndex) => <td className="p-4" key={device.id}>{values(device, deviceIndex)[fieldIndex]}</td>)}</tr>)}</tbody>
           </table>
         </div>
@@ -756,7 +756,7 @@ function ComparisonPage({ recommendation }: PageProps) {
             {bundles.map((bundle) => {
               const totals = bundleTotals(bundle);
               return (
-                <div className={`panel p-5 ${bundle.id === "recommended" ? "border-rogers-500" : ""}`} key={bundle.id}>
+                <div className={`panel p-5 ${bundle.id === "recommended" ? "border-accent-500" : ""}`} key={bundle.id}>
                   <div className="flex justify-between"><h3 className="text-xl font-black">{bundle.name}</h3><span className="badge bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">{bundle.fitScore}% fit</span></div>
                   <DefinitionList items={[
                     ["Device", findProduct(bundle.deviceId).name], ["Plan", findProduct(bundle.planId).name], ["Protection", bundle.itemIds.some((id) => id.startsWith("protect")) ? "Included · Optional" : "Not included"],
@@ -896,7 +896,7 @@ function ROIPage() {
   const update = (key: keyof ROIModel, value: number) => setROI({ ...roi, [key]: value });
   return (
     <>
-      <PageHeader eyebrow="Value and ROI" title="Make every assumption visible and editable" description="Illustrative scenarios estimate commercial potential; they are not forecasts, guarantees, or Rogers commitments." />
+      <PageHeader eyebrow="Value and ROI" title="Make every assumption visible and editable" description="Illustrative scenarios estimate commercial potential; they are not forecasts, guarantees, or provider commitments." />
       <div className="grid gap-5 p-5 lg:p-8 xl:grid-cols-[1.1fr_1fr]">
         <section className="panel p-5">
           <h2 className="text-xl font-black">Model assumptions</h2>
@@ -914,7 +914,7 @@ function ROIPage() {
         </section>
         <section className="space-y-5">
           <div className="grid gap-3 sm:grid-cols-3">
-            {scenarios.map(([name, scenario], index) => <div className={`panel p-4 ${index === 1 ? "border-rogers-500" : ""}`} key={name}><div className="text-sm font-bold text-slate-500">{name}</div><div className="mt-2 text-2xl font-black">{scenario.roi.toFixed(2)}x</div><div className="text-xs text-slate-500">illustrative ROI</div><div className="mt-3 text-sm font-bold text-emerald-600">{money(scenario.net)} net value</div></div>)}
+            {scenarios.map(([name, scenario], index) => <div className={`panel p-4 ${index === 1 ? "border-accent-500" : ""}`} key={name}><div className="text-sm font-bold text-slate-500">{name}</div><div className="mt-2 text-2xl font-black">{scenario.roi.toFixed(2)}x</div><div className="text-xs text-slate-500">illustrative ROI</div><div className="mt-3 text-sm font-bold text-emerald-600">{money(scenario.net)} net value</div></div>)}
           </div>
           <div className="panel p-5">
             <h2 className="text-xl font-black">Base scenario calculation</h2>
@@ -947,14 +947,14 @@ function ArchitecturePage() {
   ];
   return (
     <>
-      <PageHeader eyebrow="Microsoft Architecture" title="A proposed foundation for governed, measurable agentic commerce" description="The architecture illustrates conceptual integration points only; this demonstration has no connection to live Rogers systems." />
+      <PageHeader eyebrow="Microsoft Architecture" title="A proposed foundation for governed, measurable agentic commerce" description="The architecture illustrates conceptual integration points only; this demonstration has no connection to live provider systems." />
       <div className="space-y-6 p-5 lg:p-8">
         <div className="grid gap-4 xl:grid-cols-5">
           {layers.map(([title, items, colour]) => (
             <div className="panel p-4" key={title as string}>
               <div className={`mb-4 h-1.5 rounded-full ${architectureColours[colour as string]}`} />
               <h2 className="font-black">{title as string}</h2>
-              <div className="mt-3 space-y-2">{(items as string[]).map((item) => <div className="flex gap-2 text-sm" key={item}><ChevronRight className="mt-0.5 shrink-0 text-rogers-500" size={15} />{item}</div>)}</div>
+              <div className="mt-3 space-y-2">{(items as string[]).map((item) => <div className="flex gap-2 text-sm" key={item}><ChevronRight className="mt-0.5 shrink-0 text-accent-500" size={15} />{item}</div>)}</div>
             </div>
           ))}
         </div>
@@ -970,7 +970,7 @@ function ArchitecturePage() {
           </div>
         </div>
         <div className="grid gap-5 lg:grid-cols-2">
-          <div className="panel p-5"><h2 className="text-xl font-black">Proposed Rogers integrations</h2><div className="mt-4 grid grid-cols-2 gap-2">{["CRM", "Customer profile", "Product catalogue", "Pricing", "Promotions", "Eligibility", "Inventory", "Order management", "Billing", "Consent", "Retail POS", "E-commerce", "Care desktop", "Outcome systems"].map((item) => <span className="rounded-lg bg-slate-100 p-2 text-sm font-semibold dark:bg-slate-800" key={item}>{item}</span>)}</div></div>
+          <div className="panel p-5"><h2 className="text-xl font-black">Proposed provider integrations</h2><div className="mt-4 grid grid-cols-2 gap-2">{["CRM", "Customer profile", "Product catalogue", "Pricing", "Promotions", "Eligibility", "Inventory", "Order management", "Billing", "Consent", "Retail POS", "E-commerce", "Care desktop", "Outcome systems"].map((item) => <span className="rounded-lg bg-slate-100 p-2 text-sm font-semibold dark:bg-slate-800" key={item}>{item}</span>)}</div></div>
           <AboutPanel />
         </div>
       </div>
@@ -1016,8 +1016,8 @@ function GovernancePage() {
                 {[["Observe", "Read permitted context"], ["Evaluate", "Check suitability and eligibility"], ["Recommend", "Present options and reasons"], ["Customize", "Human changes optional items"], ["Approve", "Authorized human reviews exceptions"], ["Execute", "Existing commerce systems transact"], ["Learn", "Outcome feeds evaluation"]].map(([stage, detail], index) => <div className="flex gap-3" key={stage}><span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-slate-950 text-xs font-bold text-white">{index + 1}</span><div><strong>{stage}</strong><p className="text-sm text-slate-500">{detail}</p></div></div>)}
               </div>
             </div>
-            <div className="rounded-2xl border border-rogers-500 bg-red-50 p-5 text-sm text-red-950 dark:bg-red-950/20 dark:text-red-100">
-              <strong>No autonomous customer-impacting action.</strong> This concept cannot approve discounts, modify a real order, charge a customer, or commit Rogers to a price or promotion.
+            <div className="rounded-2xl border border-accent-500 bg-red-50 p-5 text-sm text-red-950 dark:bg-red-950/20 dark:text-red-100">
+              <strong>No autonomous customer-impacting action.</strong> This concept cannot approve discounts, modify a real order, charge a customer, or commit a provider to a price or promotion.
             </div>
             <DisclaimerStrip />
           </section>
@@ -1035,7 +1035,7 @@ function AboutPanel() {
   return (
     <div className="panel p-6">
       <div className="flex items-center gap-2"><Info className="text-blue-500" /><h2 className="text-xl font-black">About this concept</h2></div>
-      <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">The Rogers Mobile Attach Agent demonstrates how a governed team of AI agents could support—not replace—retail employees and digital customers during a mobile purchase journey.</p>
+      <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">The Mobile Attach Agent demonstrates how a governed team of AI agents could support—not replace—retail employees and digital customers during a mobile purchase journey.</p>
       <p className="mt-3 text-xs leading-relaxed text-slate-500">{disclaimer}</p>
     </div>
   );

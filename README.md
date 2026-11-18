@@ -1,14 +1,14 @@
-# Rogers Mobile Attach Agent
+# Mobile Attach Agent
 
 **The right recommendation. The right bundle. The right moment.**
 
-Rogers Mobile Attach Agent is a polished, front-end-only concept demonstration of an agentic sales-assistance and digital-commerce experience. It shows how customer needs, current basket context, synthetic eligibility, inventory, product suitability, transparent bundle choices, human decisions, outcomes, and commercial measurement can work together.
+Mobile Attach Agent is a polished, front-end-only concept demonstration of an agentic sales-assistance and digital-commerce experience. It shows how customer needs, current basket context, synthetic eligibility, inventory, product suitability, transparent bundle choices, human decisions, outcomes, and commercial measurement can work together.
 
-> **Synthetic-data disclaimer:** Concept demonstration using synthetic customer, product, catalogue, pricing, eligibility, inventory, financial, interaction, and outcome data. Products, prices, recommendations, eligibility results, financial values, and business outcomes are illustrative and do not represent current Rogers offers, customers, systems, or forecasts.
+> **Synthetic-data disclaimer:** Concept demonstration using synthetic customer, product, catalogue, pricing, eligibility, inventory, financial, interaction, and outcome data. Products, prices, recommendations, eligibility results, financial values, and business outcomes are illustrative and do not represent current offers, customers, systems, or forecasts.
 
 ## Business problem
 
-Device purchases are high-intent moments, but employees and customers can struggle to find the most suitable combination of device, plan, accessories, protection, and household services. The demonstration explores how Rogers could improve conversion, attachment, transaction value, confidence, and sales consistency while preserving suitability, transparency, consent, and human control.
+Device purchases are high-intent moments, but employees and customers can struggle to find the most suitable combination of device, plan, accessories, protection, and household services. The demonstration explores how a mobile provider could improve conversion, attachment, transaction value, confidence, and sales consistency while preserving suitability, transparency, consent, and human control.
 
 ## Target users
 
@@ -100,7 +100,7 @@ The architecture page proposes a Microsoft foundation using:
 - Power BI for semantic models and executive reporting
 - Microsoft Entra ID, managed identities, Key Vault, Purview, Defender for Cloud, Azure Monitor, and Application Insights
 
-All Rogers system connections shown are conceptual integration points. This repository has no backend, API keys, authentication, or live system integration.
+All provider-system connections shown are conceptual integration points. This repository has no backend, API keys, authentication, or live system integration.
 
 ## Governance principles
 
